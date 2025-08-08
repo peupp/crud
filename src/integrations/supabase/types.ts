@@ -14,7 +14,233 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      appointments: {
+        Row: {
+          created_at: string
+          ends_at: string | null
+          id: string
+          notes: string | null
+          patient_id: string
+          starts_at: string
+          status: Database["public"]["Enums"]["appointment_status"]
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          ends_at?: string | null
+          id?: string
+          notes?: string | null
+          patient_id: string
+          starts_at: string
+          status?: Database["public"]["Enums"]["appointment_status"]
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          ends_at?: string | null
+          id?: string
+          notes?: string | null
+          patient_id?: string
+          starts_at?: string
+          status?: Database["public"]["Enums"]["appointment_status"]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "appointments_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "patients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      audit_logs: {
+        Row: {
+          action: string
+          changed_by: string | null
+          created_at: string
+          entity_id: string
+          entity_type: string
+          id: string
+          new_data: Json | null
+          old_data: Json | null
+        }
+        Insert: {
+          action: string
+          changed_by?: string | null
+          created_at?: string
+          entity_id: string
+          entity_type: string
+          id?: string
+          new_data?: Json | null
+          old_data?: Json | null
+        }
+        Update: {
+          action?: string
+          changed_by?: string | null
+          created_at?: string
+          entity_id?: string
+          entity_type?: string
+          id?: string
+          new_data?: Json | null
+          old_data?: Json | null
+        }
+        Relationships: []
+      }
+      crud: {
+        Row: {
+          created_at: string
+          id: number
+        }
+        Insert: {
+          created_at?: string
+          id?: number
+        }
+        Update: {
+          created_at?: string
+          id?: number
+        }
+        Relationships: []
+      }
+      patients: {
+        Row: {
+          active: boolean
+          address_number: string | null
+          birth_date: string | null
+          cep: string | null
+          city: string | null
+          complement: string | null
+          convenio: string | null
+          cpf: string | null
+          created_at: string
+          document_number: string | null
+          document_type: Database["public"]["Enums"]["document_type"] | null
+          email: string | null
+          ethnicity: string | null
+          father_name: string | null
+          father_profession: string | null
+          guardian_cpf: string | null
+          guardian_name: string | null
+          id: string
+          legacy_code: string | null
+          marital_status: Database["public"]["Enums"]["marital_status"] | null
+          mobile_phone: string | null
+          mother_name: string | null
+          mother_profession: string | null
+          nacionalidade: string | null
+          name: string
+          naturalidade: string | null
+          neighborhood: string | null
+          observations: string | null
+          phone1: string | null
+          phone2: string | null
+          photo_url: string | null
+          profession: string | null
+          race: string | null
+          reference: string | null
+          rg: string | null
+          rn_guia_convenio: boolean | null
+          sex: Database["public"]["Enums"]["sex"] | null
+          social_name: string | null
+          spouse_name: string | null
+          state: string | null
+          street: string | null
+          updated_at: string
+          vip: boolean
+        }
+        Insert: {
+          active?: boolean
+          address_number?: string | null
+          birth_date?: string | null
+          cep?: string | null
+          city?: string | null
+          complement?: string | null
+          convenio?: string | null
+          cpf?: string | null
+          created_at?: string
+          document_number?: string | null
+          document_type?: Database["public"]["Enums"]["document_type"] | null
+          email?: string | null
+          ethnicity?: string | null
+          father_name?: string | null
+          father_profession?: string | null
+          guardian_cpf?: string | null
+          guardian_name?: string | null
+          id?: string
+          legacy_code?: string | null
+          marital_status?: Database["public"]["Enums"]["marital_status"] | null
+          mobile_phone?: string | null
+          mother_name?: string | null
+          mother_profession?: string | null
+          nacionalidade?: string | null
+          name: string
+          naturalidade?: string | null
+          neighborhood?: string | null
+          observations?: string | null
+          phone1?: string | null
+          phone2?: string | null
+          photo_url?: string | null
+          profession?: string | null
+          race?: string | null
+          reference?: string | null
+          rg?: string | null
+          rn_guia_convenio?: boolean | null
+          sex?: Database["public"]["Enums"]["sex"] | null
+          social_name?: string | null
+          spouse_name?: string | null
+          state?: string | null
+          street?: string | null
+          updated_at?: string
+          vip?: boolean
+        }
+        Update: {
+          active?: boolean
+          address_number?: string | null
+          birth_date?: string | null
+          cep?: string | null
+          city?: string | null
+          complement?: string | null
+          convenio?: string | null
+          cpf?: string | null
+          created_at?: string
+          document_number?: string | null
+          document_type?: Database["public"]["Enums"]["document_type"] | null
+          email?: string | null
+          ethnicity?: string | null
+          father_name?: string | null
+          father_profession?: string | null
+          guardian_cpf?: string | null
+          guardian_name?: string | null
+          id?: string
+          legacy_code?: string | null
+          marital_status?: Database["public"]["Enums"]["marital_status"] | null
+          mobile_phone?: string | null
+          mother_name?: string | null
+          mother_profession?: string | null
+          nacionalidade?: string | null
+          name?: string
+          naturalidade?: string | null
+          neighborhood?: string | null
+          observations?: string | null
+          phone1?: string | null
+          phone2?: string | null
+          photo_url?: string | null
+          profession?: string | null
+          race?: string | null
+          reference?: string | null
+          rg?: string | null
+          rn_guia_convenio?: boolean | null
+          sex?: Database["public"]["Enums"]["sex"] | null
+          social_name?: string | null
+          spouse_name?: string | null
+          state?: string | null
+          street?: string | null
+          updated_at?: string
+          vip?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +249,21 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      appointment_status:
+        | "agendado"
+        | "realizado"
+        | "cancelado"
+        | "nao_compareceu"
+      document_type: "RG" | "CNH" | "PASSAPORTE" | "RNE" | "OUTRO"
+      marital_status:
+        | "solteiro"
+        | "casado"
+        | "divorciado"
+        | "viuvo"
+        | "uniao_estavel"
+        | "outro"
+        | "nao_informado"
+      sex: "masculino" | "feminino" | "outro" | "nao_informado"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +390,24 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      appointment_status: [
+        "agendado",
+        "realizado",
+        "cancelado",
+        "nao_compareceu",
+      ],
+      document_type: ["RG", "CNH", "PASSAPORTE", "RNE", "OUTRO"],
+      marital_status: [
+        "solteiro",
+        "casado",
+        "divorciado",
+        "viuvo",
+        "uniao_estavel",
+        "outro",
+        "nao_informado",
+      ],
+      sex: ["masculino", "feminino", "outro", "nao_informado"],
+    },
   },
 } as const
