@@ -29,13 +29,18 @@ const Index = () => {
                   <CardTitle className="text-2xl">Pacientes</CardTitle>
                 </div>
                 <CardDescription className="text-gray-300">
-                  Gerenciar pacientes, prontuários e agendamentos
+                  Cadastro moderno de pacientes com interface intuitiva
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <Link to="/patients">
+              <CardContent className="space-y-3">
+                <Link to="/patient-registration">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                    Acessar Pacientes
+                    Cadastrar Paciente
+                  </Button>
+                </Link>
+                <Link to="/patients">
+                  <Button variant="outline" className="w-full bg-white/10 border-white/20 text-white hover:bg-white/20">
+                    Gerenciar Pacientes
                   </Button>
                 </Link>
               </CardContent>
