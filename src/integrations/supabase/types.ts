@@ -7,7 +7,7 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "13.0.4"
@@ -85,6 +85,144 @@ export type Database = {
           id?: string
           new_data?: Json | null
           old_data?: Json | null
+        }
+        Relationships: []
+      }
+      clients: {
+        Row: {
+          active: boolean
+          address_number: string | null
+          birth_date: string | null
+          cep: string | null
+          city: string | null
+          complement: string | null
+          convenio: string | null
+          cpf: string | null
+          created_at: string
+          document_number: string | null
+          document_type: Database["public"]["Enums"]["document_type"] | null
+          email: string | null
+          ethnicity: string | null
+          father_name: string | null
+          father_profession: string | null
+          guardian_cpf: string | null
+          guardian_name: string | null
+          id: string
+          legacy_code: string | null
+          marital_status: Database["public"]["Enums"]["marital_status"] | null
+          mobile_phone: string | null
+          mother_name: string | null
+          mother_profession: string | null
+          nacionalidade: string | null
+          name: string
+          naturalidade: string | null
+          neighborhood: string | null
+          observations: string | null
+          phone1: string | null
+          phone2: string | null
+          photo_url: string | null
+          profession: string | null
+          race: string | null
+          reference: string | null
+          rg: string | null
+          rn_guia_convenio: boolean | null
+          sex: Database["public"]["Enums"]["sex"] | null
+          social_name: string | null
+          spouse_name: string | null
+          state: string | null
+          street: string | null
+          updated_at: string
+          vip: boolean
+        }
+        Insert: {
+          active?: boolean
+          address_number?: string | null
+          birth_date?: string | null
+          cep?: string | null
+          city?: string | null
+          complement?: string | null
+          convenio?: string | null
+          cpf?: string | null
+          created_at?: string
+          document_number?: string | null
+          document_type?: Database["public"]["Enums"]["document_type"] | null
+          email?: string | null
+          ethnicity?: string | null
+          father_name?: string | null
+          father_profession?: string | null
+          guardian_cpf?: string | null
+          guardian_name?: string | null
+          id?: string
+          legacy_code?: string | null
+          marital_status?: Database["public"]["Enums"]["marital_status"] | null
+          mobile_phone?: string | null
+          mother_name?: string | null
+          mother_profession?: string | null
+          nacionalidade?: string | null
+          name: string
+          naturalidade?: string | null
+          neighborhood?: string | null
+          observations?: string | null
+          phone1?: string | null
+          phone2?: string | null
+          photo_url?: string | null
+          profession?: string | null
+          race?: string | null
+          reference?: string | null
+          rg?: string | null
+          rn_guia_convenio?: boolean | null
+          sex?: Database["public"]["Enums"]["sex"] | null
+          social_name?: string | null
+          spouse_name?: string | null
+          state?: string | null
+          street?: string | null
+          updated_at?: string
+          vip?: boolean
+        }
+        Update: {
+          active?: boolean
+          address_number?: string | null
+          birth_date?: string | null
+          cep?: string | null
+          city?: string | null
+          complement?: string | null
+          convenio?: string | null
+          cpf?: string | null
+          created_at?: string
+          document_number?: string | null
+          document_type?: Database["public"]["Enums"]["document_type"] | null
+          email?: string | null
+          ethnicity?: string | null
+          father_name?: string | null
+          father_profession?: string | null
+          guardian_cpf?: string | null
+          guardian_name?: string | null
+          id?: string
+          legacy_code?: string | null
+          marital_status?: Database["public"]["Enums"]["marital_status"] | null
+          mobile_phone?: string | null
+          mother_name?: string | null
+          mother_profession?: string | null
+          nacionalidade?: string | null
+          name?: string
+          naturalidade?: string | null
+          neighborhood?: string | null
+          observations?: string | null
+          phone1?: string | null
+          phone2?: string | null
+          photo_url?: string | null
+          profession?: string | null
+          race?: string | null
+          reference?: string | null
+          rg?: string | null
+          rn_guia_convenio?: boolean | null
+          sex?: Database["public"]["Enums"]["sex"] | null
+          social_name?: string | null
+          spouse_name?: string | null
+          state?: string | null
+          street?: string | null
+          updated_at?: string
+          vip?: boolean
         }
         Relationships: []
       }
