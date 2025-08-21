@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes | Gestão de Pacientes</title>
+    <meta name="description" content="Pacientes: buscar, filtrar, adicionar e gerenciar prontuários.">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="px-4 md:px-8 py-6">
+        <header class="mb-6 flex items-center justify-between">
+            <div>
+                <h1 class="text-2xl font-semibold tracking-tight">Pacientes - Lista e Cadastro</h1>
+                <p class="text-sm text-muted-foreground">Pesquise por nome ou documento e use filtros para refinar.</p>
+            </div>
+            <a href="patient-registration-static.html">
+                <button class="btn btn-primary min-w-28">
+                    <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                    Adicionar
+                </button>
+            </a>
+        </header>
+
+        <section class="mb-4 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+            <div class="relative">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <input type="text" placeholder="Buscar por nome..." class="input pl-9" id="searchTerm">
+            </div>
+            <input type="text" placeholder="Convênio" class="input" id="convenio">
+            <div class="flex items-center gap-3">
+                <input type="checkbox" id="vipOnly" class="switch">
+                <label for="vipOnly">Apenas VIP</label>
+            </div>
+            <select class="input" id="birthdayMonth">
+                <option value="">Aniversariantes (mês)</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <input type="text" placeholder="Cidade" class="input" id="city">
+            <input type="text" placeholder="Estado" class="input" id="stateUf">
+        </section>
+
+        <section>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>Localidade</th>
+                            <th>Último atendimento</th>
+                            <th>Próximo atendimento</th>
+                            <th class="w-[60px]"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-medium cursor-pointer underline-offset-2 hover:underline">
+                                        João Silva
+                                    </span>
+                                    <span class="badge badge-secondary">VIP</span>
+                                    <span class="badge badge-outline">Unimed</span>
+                                </div>
+                            </td>
+                            <td>+55 (11) 99999-9999</td>
+                            <td>São Paulo/SP</td>
+                            <td>15/12/2024 14:30</td>
+                            <td>20/01/2025 10:00</td>
+                            <td>
+                                <button class="btn-icon">⋮</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-medium cursor-pointer underline-offset-2 hover:underline">
+                                        Maria Santos
+                                    </span>
+                                    <span class="badge badge-outline">SUS</span>
+                                </div>
+                            </td>
+                            <td>+55 (11) 98888-8888</td>
+                            <td>Rio de Janeiro/RJ</td>
+                            <td>10/12/2024 16:00</td>
+                            <td>Nenhum atendimento agendado</td>
+                            <td>
+                                <button class="btn-icon">⋮</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-center py-4">
+                <button class="btn btn-outline">Carregar mais</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
